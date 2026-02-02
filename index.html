@@ -898,6 +898,441 @@
                 font-size: 14px;
             }
         }
+/* ============================================
+   RESPONSIVIDADE MOBILE - BETINI
+   ============================================ */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+    body {
+        padding: 16px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+/* Mobile - Smartphones */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Header */
+    .header {
+        padding: 16px;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+
+    /* Cards */
+    .card {
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    /* Formulário - Empilhamento vertical */
+    .filter-row,
+    .mao-obra-row {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 16px; /* Evita zoom no iOS */
+        padding: 12px;
+        height: 48px; /* Touch-friendly */
+    }
+
+    /* Informações da Loja - Cards compactos */
+    .orcamento-info {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .orcamento-info-group {
+        padding: 12px;
+        border-radius: 8px;
+        background: var(--gray-50);
+    }
+
+    .orcamento-info-group h3 {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .orcamento-info-group p {
+        font-size: 13px;
+    }
+
+    /* Tabela de Peças → Cards */
+    .table-container {
+        overflow: visible;
+        max-height: none;
+        overflow-y: visible;
+        position: relative;
+        z-index: 1;
+    }
+
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+    table {
+        display: none; /* Esconde tabela em mobile */
+    }
+
+    /* Cards de peças (será criado via JS) */
+    .pecas-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 32px;
+        padding-bottom: 16px;
+    
+    /* Botão Ver Mais */
+    .ver-mais-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 16px;
+        margin-top: 16px;
+        border-top: 1px solid var(--gray-200);
+    }
+
+    .pecas-counter {
+        font-size: 14px;
+        color: var(--gray-600);
+        text-align: center;
+    }
+
+    .ver-mais-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .peca-card {
+        background: white;
+        border: 1px solid var(--gray-200);
+        border-radius: 8px;
+        padding: 12px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .peca-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--gray-200);
+    }
+
+    .peca-card-title {
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--gray-900);
+        flex: 1;
+    }
+
+    .peca-card-badge {
+        font-size: 10px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin-left: 8px;
+        white-space: nowrap;
+    }
+
+    .peca-card-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .peca-card-field {
+        font-size: 12px;
+    }
+
+    .peca-card-field-label {
+        color: var(--gray-600);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+    }
+
+    .peca-card-field-value {
+        color: var(--gray-900);
+        font-weight: 500;
+    }
+
+    .peca-card-actions {
+        display: flex;
+        gap: 8px;
+    }
+
+    .peca-card-actions input {
+        flex: 1;
+        max-width: 80px;
+    }
+
+    .peca-card-actions button {
+        flex: 1;
+        height: 44px;
+        font-size: 14px;
+    }
+
+    /* Orçamento Atual - Cards expansíveis */
+    .orcamento-items {
+        gap: 12px;
+    }
+
+    .orcamento-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .orcamento-item span:first-child {
+        font-size: 13px;
+    }
+
+    .orcamento-item span:last-child {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    /* Botões - Touch-friendly */
+    .btn {
+        min-height: 44px;
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .btn-actions {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .btn-actions .btn {
+        width: 100%;
+    }
+
+    .finalizar-btn {
+        width: 100%;
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    /* Preview do PDF - Fullscreen */
+    .orcamento-preview {
+        padding: 0;
+    }
+
+    .orcamento-document {
+        padding: 8px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .pdf-page {
+        padding: 16px;
+        box-shadow: none;
+    }
+
+    /* Preview header */
+    .preview-header {
+        padding: 12px;
+    }
+
+    .preview-header-actions {
+        gap: 8px;
+    }
+
+    .preview-header-actions .btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    /* Seção de orçamento */
+    #orcamentoSection {
+        margin-top: 32px !important;
+        padding-top: 24px;
+        border-top: 2px solid var(--gray-200);
+        clear: both;
+    }
+
+    .orcamento-section {
+        position: relative;
+        z-index: 2;
+    }
+    }
+
+    /* Tabelas do PDF em mobile */
+    .orcamento-table th,
+    .orcamento-table td {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    /* Totais */
+    .orcamento-totals {
+        font-size: 13px;
+    }
+
+    .orcamento-totals .orcamento-item {
+        padding: 8px;
+    }
+
+    /* Logo */
+    .logo-container {
+        padding: 12px;
+    }
+
+    .logo-container img {
+        max-height: 50px;
+    }
+
+    /* Mão de obra cards */
+    .mao-obra-section {
+        gap: 12px;
+    }
+
+    /* Search box */
+    .search-box input {
+        font-size: 16px; /* Evita zoom */
+        height: 48px;
+    }
+
+    /* Filtros */
+    .filtros-section .form-group {
+        margin-bottom: 12px;
+    }
+
+    /* Empty states */
+    .empty-state {
+        padding: 32px 16px;
+        font-size: 14px;
+    }
+
+    .empty-state i {
+        font-size: 40px;
+    }
+}
+
+/* Mobile pequeno - < 480px */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .header p {
+        font-size: 11px;
+    }
+
+    .card {
+        padding: 12px;
+        border-radius: 6px;
+    }
+
+    .peca-card-body {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        font-size: 13px;
+        min-height: 44px;
+    }
+
+    .orcamento-table th,
+    .orcamento-table td {
+        font-size: 10px;
+        padding: 6px 2px;
+    }
+
+    /* Preview buttons em coluna */
+    .preview-header-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .preview-header-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .orcamento-preview {
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .pdf-page {
+        page-break-after: auto;
+    }
+}
+
+/* Utilities mobile */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .show-mobile {
+        display: block !important;
+    }
+
+    /* Scroll horizontal suave */
+    .scroll-horizontal {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+
+    /* Touch feedback */
+    .btn:active,
+    button:active {
+        transform: scale(0.97);
+        transition: transform 0.1s;
+    }
+}
     </style>
 </head>
 <body>
@@ -1548,10 +1983,34 @@
             updateCascadeFilters(null);
         }
         
-        function updateTable(pecas) {
+        let currentDisplayCount = 15; // Quantos cards mostrar inicialmente
+        const CARDS_PER_LOAD = 15; // Quantos carregar ao clicar "Ver mais"
+
+        function updateTable(pecas, reset = true) {
             const tbody = document.querySelector('#pecasTable tbody');
+            const tableContainer = document.querySelector('.table-container');
+
+            // Detectar se está em mobile
+            const isMobile = window.innerWidth <= 768;
+
+            // Reset contador ao atualizar com novas peças
+            if (reset) {
+                currentDisplayCount = 15;
+            }
 
             tbody.innerHTML = '';
+
+            // Remover cards existentes se houver
+            let cardsContainer = document.querySelector('.pecas-cards');
+            if (cardsContainer) {
+                cardsContainer.remove();
+            }
+
+            // Remover botão "Ver mais" existente
+            let verMaisBtn = document.querySelector('.ver-mais-btn');
+            if (verMaisBtn) {
+                verMaisBtn.remove();
+            }
 
             if (pecas.length === 0) {
                 tbody.innerHTML = `
@@ -1570,35 +2029,124 @@
                 return;
             }
 
-            pecas.forEach((peca, index) => {
-                // Gerar ID único para a peça baseado em seus atributos
-                const pecaId = `${peca.fabricante}-${peca.categoria}-${peca.tipo_modelo}-${peca.descricao}`.replace(/\s+/g, '-');
+            // MODO MOBILE: Criar cards com carregamento progressivo
+            if (isMobile) {
+                cardsContainer = document.createElement('div');
+                cardsContainer.className = 'pecas-cards';
 
-                // Normalizar nome do fabricante para classe CSS
-                const fabricanteClass = peca.fabricante.toLowerCase().replace(/[^a-z0-9]/g, '-');
+                // Determinar quantos cards mostrar
+                const displayCount = Math.min(currentDisplayCount, pecas.length);
+                const pecasToShow = pecas.slice(0, displayCount);
 
-                // Garantir que o preço é um número válido
-                const precoNumero = parseValor(peca.preco);
-                const precoFormatado = precoNumero.toFixed(2).replace('.', ',');
+                pecasToShow.forEach((peca, index) => {
+                    const pecaId = `${peca.fabricante}-${peca.categoria}-${peca.tipo_modelo}-${peca.descricao}`.replace(/\s+/g, '-');
+                    const fabricanteClass = peca.fabricante.toLowerCase().replace(/[^a-z0-9]/g, '-');
+                    const precoNumero = parseValor(peca.preco);
+                    const precoFormatado = precoNumero.toFixed(2).replace('.', ',');
 
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td><span class="fabricante-badge fabricante-${fabricanteClass}">${peca.fabricante}</span></td>
-                    <td>${peca.categoria}</td>
-                    <td>${peca.tipo_modelo}</td>
-                    <td>${peca.descricao}</td>
-                    <td style="white-space: nowrap;"><strong>R$ ${precoFormatado}</strong></td>
-                    <td style="text-align: center;"><input type="number" class="quantidade-input" min="1" value="1" id="qty-${index}" data-peca-id="${pecaId}"></td>
-                    <td style="text-align: center;"><button class="btn btn-primary btn-sm" onclick="adicionarPeca('${pecaId}')">
-                        <i data-lucide="plus" style="width: 14px; height: 14px;"></i> Adicionar
-                    </button></td>
-                `;
-                tbody.appendChild(row);
-            });
+                    const card = document.createElement('div');
+                    card.className = 'peca-card';
+                    card.innerHTML = `
+                        <div class="peca-card-header">
+                            <div class="peca-card-title">${peca.descricao}</div>
+                            <span class="peca-card-badge fabricante-badge fabricante-${fabricanteClass}">${peca.fabricante}</span>
+                        </div>
+                        <div class="peca-card-body">
+                            <div class="peca-card-field">
+                                <div class="peca-card-field-label">Categoria</div>
+                                <div class="peca-card-field-value">${peca.categoria}</div>
+                            </div>
+                            <div class="peca-card-field">
+                                <div class="peca-card-field-label">Tipo/Modelo</div>
+                                <div class="peca-card-field-value">${peca.tipo_modelo}</div>
+                            </div>
+                            <div class="peca-card-field" style="grid-column: 1 / -1;">
+                                <div class="peca-card-field-label">Preço</div>
+                                <div class="peca-card-field-value" style="font-size: 18px; font-weight: 700; color: var(--primary);">R$ ${precoFormatado}</div>
+                            </div>
+                        </div>
+                        <div class="peca-card-actions">
+                            <input type="number" class="quantidade-input" min="1" value="1" id="qty-${index}" data-peca-id="${pecaId}" style="text-align: center;">
+                            <button class="btn btn-primary" onclick="adicionarPeca('${pecaId}')">
+                                <i data-lucide="plus" style="width: 16px; height: 16px;"></i> Adicionar
+                            </button>
+                        </div>
+                    `;
+                    cardsContainer.appendChild(card);
+                });
+
+                tableContainer.appendChild(cardsContainer);
+
+                // Adicionar contador e botão "Ver mais" se houver mais peças
+                if (displayCount < pecas.length) {
+                    const verMaisContainer = document.createElement('div');
+                    verMaisContainer.className = 'ver-mais-container';
+                    verMaisContainer.innerHTML = `
+                        <div class="pecas-counter">
+                            Mostrando <strong>${displayCount}</strong> de <strong>${pecas.length}</strong> peças
+                        </div>
+                        <button class="btn btn-secondary ver-mais-btn" onclick="carregarMaisPecas()">
+                            <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+                            Ver mais ${Math.min(CARDS_PER_LOAD, pecas.length - displayCount)} peças
+                        </button>
+                    `;
+                    tableContainer.appendChild(verMaisContainer);
+                }
+            }
+            // MODO DESKTOP: Criar tabela normal
+            else {
+                pecas.forEach((peca, index) => {
+                    const pecaId = `${peca.fabricante}-${peca.categoria}-${peca.tipo_modelo}-${peca.descricao}`.replace(/\s+/g, '-');
+                    const fabricanteClass = peca.fabricante.toLowerCase().replace(/[^a-z0-9]/g, '-');
+                    const precoNumero = parseValor(peca.preco);
+                    const precoFormatado = precoNumero.toFixed(2).replace('.', ',');
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><span class="fabricante-badge fabricante-${fabricanteClass}">${peca.fabricante}</span></td>
+                        <td>${peca.categoria}</td>
+                        <td>${peca.tipo_modelo}</td>
+                        <td>${peca.descricao}</td>
+                        <td style="white-space: nowrap;"><strong>R$ ${precoFormatado}</strong></td>
+                        <td style="text-align: center;"><input type="number" class="quantidade-input" min="1" value="1" id="qty-${index}" data-peca-id="${pecaId}"></td>
+                        <td style="text-align: center;"><button class="btn btn-primary btn-sm" onclick="adicionarPeca('${pecaId}')">
+                            <i data-lucide="plus" style="width: 14px; height: 14px;"></i> Adicionar
+                        </button></td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            }
 
             // Atualizar ícones Lucide
             lucide.createIcons();
         }
+
+        function carregarMaisPecas() {
+            currentDisplayCount += CARDS_PER_LOAD;
+            updateTable(pecasFiltradasAtual, false); // false = não resetar contador
+
+            // Scroll suave até os novos cards
+            setTimeout(() => {
+                const cardsContainer = document.querySelector('.pecas-cards');
+                if (cardsContainer) {
+                    const lastCard = cardsContainer.lastElementChild;
+                    if (lastCard) {
+                        lastCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }
+            }, 100);
+        }
+
+        // Listener para atualizar layout ao redimensionar janela
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (pecasFiltradasAtual.length > 0) {
+                    updateTable(pecasFiltradasAtual, false);
+                }
+            }, 250);
+        });
         
         function adicionarPeca(pecaId) {
             // Buscar a peça pelo ID único ao invés de usar index
@@ -2186,10 +2734,8 @@
                 // LOJAS
                 if (Array.isArray(lojasRes)) {
                     lojasRes.forEach(l => {
-                        if (lojas[l.codigo]) { console.warn(`Duplicata ignorada: ${l.codigo}`); return; }
                         const kmParsed = parseValor(l.km || l.Km || l.KM);
                         const kmFinal = kmParsed || 100;
-                        if (l.codigo === "A003") console.warn("⚠️ A003:", "raw:", l.km, "parsed:", kmParsed, "final:", kmFinal);
                         lojas[l.codigo] = { nome: l.nome, cidade: l.cidade, regiao: l.regiao, km: kmFinal };
                     });
                     console.log('✓ Lojas carregadas:', Object.keys(lojas).length);
