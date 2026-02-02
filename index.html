@@ -2186,16 +2186,15 @@
                 // LOJAS
                 if (Array.isArray(lojasRes)) {
                     lojasRes.forEach(l => {
-                        lojas[l.codigo] = {
-                            nome: l.nome,
-                            cidade: l.cidade,
-                            regiao: l.regiao,
-                            km: parseValor(l.km) || 100
-                        };
+                        if (lojas[l.codigo]) { console.warn(`Duplicata ignorada: ${l.codigo}`); return; }
+                        const kmParsed = parseValor(l.km || l.Km || l.KM);
+                        const kmFinal = kmParsed || 100;
+                        if (l.codigo === "A003") console.warn("⚠️ A003:", "raw:", l.km, "parsed:", kmParsed, "final:", kmFinal);
+                        lojas[l.codigo] = { nome: l.nome, cidade: l.cidade, regiao: l.regiao, km: kmFinal };
                     });
                     console.log('✓ Lojas carregadas:', Object.keys(lojas).length);
                 } else {
-                    console.error('❌ Erro: lojasRes não é um array', lojasRes);
+                    console.log("🔍 Debug - Primeira loja:", lojasRes[0]);
                 }
 
                 // VALORES HORA
